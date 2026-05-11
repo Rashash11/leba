@@ -15,7 +15,7 @@
     "hero_section_title": "Wedding Day",
     "day_of_the_month": "30",
     "month": "May",
-    "time": "19:00",
+    "time": "7:00 PM",
     "our_story_title": "Our Story",
     "our_story_text": "<span class='font-semibold' style='color: var(--foreground);'>It started with a smile</span> — the kind you don't plan for, the kind that stays with you long after the moment has passed. That was the beginning of Menna and Ahmed's story.\\n\\nThrough quiet evenings and loud laughter, through every challenge and every dream shared, they found in each other a home. A place where everything felt <span class='font-semibold' style='color: var(--foreground);'>right</span>.\\n\\nAnd now, on this beautiful day in May, they take the next step — together. We are so grateful you are here to witness the moment they become <span class='font-semibold' style='color: var(--foreground);'>one</span>.",
     "event_details_title": "Event Details",
@@ -24,7 +24,7 @@
             "image": "ceremony",
             "title": "Ceremony",
             "paragraphs": [
-                "<span class='font-medium'>Time:</span> 19:00 – 23:00",
+                "<span class='font-medium'>Time:</span> 7:00 PM – 11:00 PM",
                 "<span class='font-medium'>Location:</span> Citadel"
             ]
         },
@@ -32,7 +32,7 @@
             "image": "reception",
             "title": "Reception",
             "paragraphs": [
-                "<span class='font-medium'>Time:</span> 19:00 – 23:00",
+                "<span class='font-medium'>Time:</span> 7:00 PM – 11:00 PM",
                 "<span class='font-medium'>Location:</span> Citadel"
             ]
         },
