@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-//import HeroImage from "@/public/hero-section.webp";
-import HeroImage from "@/public/hero-section.jpg";
+import HeroImage from "@/public/hero-leba.png";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -141,7 +140,7 @@ export default function HeroSection() {
                 className="h-[100svh] relative flex flex-col flex-nowrap justify-center items-center gap-4"
             >
                 <Image 
-                    className="absolute h-full object-cover -z-10"
+                    className="absolute h-full w-full object-cover object-top -z-10"
                     alt="Hero image"
                     src={HeroImage}
                     height={HeroImage.height}

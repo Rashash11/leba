@@ -8,7 +8,6 @@ import HeroSection from "@/components/windows/heroSection";
 import OurStory from "@/components/windows/ourStory";
 import EventDetails from "@/components/windows/eventDetails";
 import TimerToWedding from "@/components/windows/timerToWedding";
-import GetInTouch from "@/components/windows/getInTouch";
 import Footer from "@/components/windows/footer";
 import RequestToQuests from "@/components/windows/requestToQuests";
 
@@ -57,7 +56,6 @@ export default function Home() {
             {customerDetails.event_details_page_enabled ? <EventDetails /> : null}
             {customerDetails.timer_to_wedding_page_enabled ? <TimerToWedding /> : null}
             {customerDetails.request_to_guests_page_enabled ? <RequestToQuests /> : null}
-            {customerDetails.get_in_touch_page_enabled ? <GetInTouch /> : null}
             {customerDetails.footer_page_enabled ? <Footer /> : null}
           </div>
         </div>

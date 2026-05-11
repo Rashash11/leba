@@ -10,7 +10,8 @@ import {
     CeremonySvg,
     ReceptionSvg,
     LineSvg,
-    QrCodeSvg
+    QrCodeSvg,
+    MusicSvg
 } from "@/components/svg/svg";
 
 export const iconsList = {
@@ -21,7 +22,8 @@ export const iconsList = {
   ceremony: CeremonySvg,
   reception: ReceptionSvg,
   line: LineSvg,
-  qr_code: QrCodeSvg
+  qr_code: QrCodeSvg,
+  music: MusicSvg
 } as const;
 
 const Icon = forwardRef<SVGSVGElement, {

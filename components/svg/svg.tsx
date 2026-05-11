@@ -311,3 +311,24 @@ export const QrCodeSvg = forwardRef<SVGSVGElement, {
         </svg>
     );
 });
+
+export const MusicSvg = forwardRef<SVGSVGElement, {
+    className: string;
+    fillColor?: HexColor;
+    strokeColor?: HexColor;
+}>(({
+    className,
+    fillColor = DEFAULT_SVG_COLOR_FILL
+}, ref) => {
+    return (
+        <svg
+            ref={ref}
+            className={className}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill={fillColor}
+        >
+            <path d="M9 3v10.55A4 4 0 1 0 11 17V7h4V3H9z"/>
+        </svg>
+    );
+});

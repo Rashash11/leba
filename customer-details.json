@@ -5,26 +5,26 @@
     "our_story_page_enabled": true,
     "event_details_page_enabled": true,
     "timer_to_wedding_page_enabled": true,
-    "get_in_touch_page_enabled": true,
-    "request_to_guests_page_enabled": true,
+    "get_in_touch_page_enabled": false,
+    "request_to_guests_page_enabled": false,
     "footer_page_enabled": true,
-    "wedding_date": "2025.09.09",
-    "first_human_name": "Nadien",
-    "second_human_name": "Asser",
+    "wedding_date": "2026.05.30",
+    "first_human_name": "Menna",
+    "second_human_name": "Ahmed",
     "ampersand": "&",
     "hero_section_title": "Wedding Day",
-    "day_of_the_month": "09",
-    "month": "September",
-    "time": "14:00",
+    "day_of_the_month": "30",
+    "month": "May",
+    "time": "18:00",
     "our_story_title": "Our Story",
-    "our_story_text": "<span class='font-semibold' style='color: var(--foreground);'>Eight years ago</span>, on an ordinary walk with friends, our paths first crossed. We could never have imagined that this moment would become the beginning of our story. A story filled with heartfelt conversations until dawn, joys, support, and love that only grew stronger with each passing year.\\n\\nOur paths led us through moments of happiness and challenges, but we always walked together — hand in hand, <span class='font-semibold' style='color: var(--foreground);'>heart to heart</span>. At the heights of mountains, where breathing is deeper, we paused for a moment — and began eternity.\\n\\nAnd now, standing on the threshold of a new chapter, we invite you with open hearts to share with us this special day — the day when we become <span class='font-semibold' style='color: var(--foreground);'>family</span>.",
+    "our_story_text": "<span class='font-semibold' style='color: var(--foreground);'>It started with a smile</span> — the kind you don't plan for, the kind that stays with you long after the moment has passed. That was the beginning of Menna and Ahmed's story.\\n\\nThrough quiet evenings and loud laughter, through every challenge and every dream shared, they found in each other a home. A place where everything felt <span class='font-semibold' style='color: var(--foreground);'>right</span>.\\n\\nAnd now, on this beautiful day in May, they take the next step — together. We are so grateful you are here to witness the moment they become <span class='font-semibold' style='color: var(--foreground);'>one</span>.",
     "event_details_title": "Event Details",
     "event_details_items": [
         {
             "image": "ceremony",
             "title": "Ceremony",
             "paragraphs": [
-                "<span class='font-medium'>Time:</span> 14:00",
+                "<span class='font-medium'>Time:</span> 18:00",
                 "<span class='font-medium'>Location:</span> Cairo, Egypt"
             ]
         },
@@ -32,22 +32,15 @@
             "image": "reception",
             "title": "Reception",
             "paragraphs": [
-                "<span class='font-medium'>Time:</span> 15:00",
+                "<span class='font-medium'>Time:</span> 19:30",
                 "<span class='font-medium'>Location:</span> Cairo, Egypt"
             ]
         },
         {
-            "image": "dress_code",
-            "title": "Dress Code",
+            "image": "music",
+            "title": "Music",
             "paragraphs": [
-                "If you wish, you can join our wedding color palette, but the most important thing for us is your comfort."
-            ],
-            "dress_code_colors": [
-                "#fef5e2",
-                "#dbc8c1",
-                "#6f574b",
-                "#3b2a23",
-                "#1f1f1f"
+                "We will play the best music to make this night unforgettable. Get ready to dance!"
             ]
         }
     ],
@@ -55,33 +48,20 @@
     "event_detail_location_title": "Location",
     "event_detail_location_name": "Cairo",
     "event_detail_location_address": "Cairo, Egypt",
-    "timer_to_wedding_title": "Countdown to Wedding",
+    "timer_to_wedding_title": "Countdown to the Big Day",
     "timer_to_wedding_label_days": "Days",
     "timer_to_wedding_label_hours": "Hours",
     "timer_to_wedding_label_minutes": "Minutes",
     "timer_to_wedding_label_seconds": "Seconds",
     "get_in_touch_title": "Get In Touch",
-    "get_in_touch_text": "If you have any questions or just want to send your best wishes, feel free to reach out!",
-    "get_in_touch_connection_list": [
-        {
-            "icon": "phone",
-            "title": "Phone:",
-            "text": "+20 11 41192655",
-            "link": "tel:+201141192655"
-        },
-        {
-            "icon": "mail",
-            "title": "Email:",
-            "text": "contact@wedding.com",
-            "link": "mailto:contact@wedding.com"
-        }
-    ],
+    "get_in_touch_text": "",
+    "get_in_touch_connection_list": [],
     "request_to_quests_title": "Dear Guests!",
-    "request_to_quests_text": "Your presence at our wedding is the greatest gift we could ask for. If you wish to honor us with a gift, a contribution towards our future together would be deeply appreciated.",
-    "request_to_quests_description": "Click on the QR code<br>to proceed",
-    "request_to_quests_link": "https://example.com/gift",
+    "request_to_quests_text": "",
+    "request_to_quests_description": "",
+    "request_to_quests_link": "#",
     "footer_paragraphs": [
-        "© 2025 Nadien & Asser. All rights reserved.",
+        "© 2026 Menna & Ahmed. All rights reserved.",
         "Made with ❤️ for this special day"
     ],
     "footer_developer_text": "",
