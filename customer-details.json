@@ -6,7 +6,7 @@
     "event_details_page_enabled": true,
     "timer_to_wedding_page_enabled": true,
     "get_in_touch_page_enabled": false,
-    "request_to_guests_page_enabled": false,
+    "request_to_guests_page_enabled": true,
     "footer_page_enabled": true,
     "wedding_date": "2026.05.30",
     "first_human_name": "Menna",
@@ -56,15 +56,16 @@
     "get_in_touch_title": "Get In Touch",
     "get_in_touch_text": "",
     "get_in_touch_connection_list": [],
-    "request_to_quests_title": "Dear Guests!",
-    "request_to_quests_text": "",
-    "request_to_quests_description": "",
-    "request_to_quests_link": "#",
+    "request_to_quests_title": "Digital Guestbook",
+    "request_to_quests_text": "Scan the QR code to leave a photo and a heartfelt message for Menna & Ahmed. Your memories will become part of their wedding story.",
+    "request_to_quests_description": "Or visit /guestbook on your phone",
+    "request_to_quests_link": "/guestbook",
     "footer_paragraphs": [
         "© 2026 Menna & Ahmed. All rights reserved.",
         "Made with ❤️ for this special day"
     ],
     "footer_developer_text": "",
     "footer_developer_name": "Wedding Team",
-    "footer_developer_link": "#"
+    "footer_developer_link": "#",
+    "gallery_password": "menna&ahmed2026"
 }

@@ -7,16 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "preview": "npx serve@latest out",
-    "export": "next export"
+    "preview": "npx serve@latest out"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@hcaptcha/react-hcaptcha": "^1.17.4",
+    "@supabase/supabase-js": "^2.105.4",
     "gsap": "^3.13.0",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.523.0",
     "next": "^16.1.1",
+    "qrcode.react": "^4.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.70.0"

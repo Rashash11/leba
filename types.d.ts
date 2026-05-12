@@ -67,6 +67,7 @@ interface ICustomerDetails {
   footer_developer_text: string;
   footer_developer_name: string;
   footer_developer_link: string;
+  gallery_password: string;
 } 
 
 interface IEventDetailsItem {

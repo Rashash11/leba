@@ -2,8 +2,8 @@
 
 import { REQUEST_TO_QUESTS_PAGE_ID } from "@/constants";
 import useCustomerDetails from "@/components/hooks/useCustomerDetails";
-import { useRef } from "react";
-import Icon from "@/components/elements/icon";
+import { useRef, useState, useEffect } from "react";
+import { QRCodeSVG } from "qrcode.react";
 import TitleText from "@/components/elements/titleText";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,6 +15,13 @@ export default function RequestToQuests() {
     const containerRef = useRef<HTMLDivElement | null>(null);
     const textRef = useRef<HTMLParagraphElement | null>(null);
     const qrRef = useRef<HTMLDivElement | null>(null);
+    const [qrUrl, setQrUrl] = useState("");
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            setQrUrl(window.location.origin + customerDetails.request_to_quests_link);
+        }
+    }, [customerDetails.request_to_quests_link]);
 
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -85,12 +92,18 @@ export default function RequestToQuests() {
                 <a
                     target="_blank"
                     href={customerDetails.request_to_quests_link}
-                    className="cursor-pointer"
+                    className="cursor-pointer flex justify-center"
                 >
-                    <Icon
-                        name="qr_code"
-                        className="opacity-85 ml-auto mr-auto w-[75%] mt-2 xl:w-[45%] 2xl:w-[35%]"
-                    />
+                    {qrUrl && (
+                        <QRCodeSVG
+                            value={qrUrl}
+                            size={280}
+                            bgColor="transparent"
+                            fgColor="var(--foreground)"
+                            level="M"
+                            className="w-[75%] max-w-[280px] mt-2 opacity-85"
+                        />
+                    )}
                 </a>
 
                 {customerDetails.request_to_quests_description !== "" 
