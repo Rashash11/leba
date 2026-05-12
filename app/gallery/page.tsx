@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { GENERAL_LOADING_ID } from "@/constants";
 import { getSupabase } from "@/lib/supabase";
-import { Heart, ArrowLeft, ImageOff, Lock, Download } from "lucide-react";
+import { Heart, ArrowLeft, ImageOff, Lock, Download, Trash2 } from "lucide-react";
 import Link from "next/link";
 import customerDetails from "@/customer-details.json";
 
@@ -36,6 +36,24 @@ export default function GalleryPage() {
       setUnlocked(true);
     }
   }, []);
+
+  const deleteEntry = async (entry: GuestbookEntry) => {
+    try {
+      // Delete from storage
+      const fileName = entry.photo_url.split("/").pop();
+      if (fileName) {
+        await getSupabase().storage.from("guestbook-photos").remove([fileName]);
+      }
+      // Delete from database
+      await getSupabase().from("guestbook_entries").delete().eq("id", entry.id);
+      // Update local state
+      setEntries((prev) => prev.filter((e) => e.id !== entry.id));
+      setSelectedEntry(null);
+    } catch (err) {
+      console.error("Delete error:", err);
+      alert("Failed to delete. Please try again.");
+    }
+  };
 
   const downloadPhoto = async (url: string, name: string) => {
     try {
@@ -288,14 +306,24 @@ export default function GalleryPage() {
                     {selectedEntry.guest_name}
                   </p>
                 </div>
-                <button
-                  onClick={() => downloadPhoto(selectedEntry.photo_url, selectedEntry.guest_name)}
-                  className="flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium transition hover:scale-105"
-                  style={{ backgroundColor: "var(--foreground)", color: "white" }}
-                >
-                  <Download className="w-3.5 h-3.5" />
-                  Save
-                </button>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => deleteEntry(selectedEntry)}
+                    className="flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium transition hover:scale-105"
+                    style={{ backgroundColor: "#e53e3e", color: "white" }}
+                  >
+                    <Trash2 className="w-3.5 h-3.5" />
+                    Delete
+                  </button>
+                  <button
+                    onClick={() => downloadPhoto(selectedEntry.photo_url, selectedEntry.guest_name)}
+                    className="flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium transition hover:scale-105"
+                    style={{ backgroundColor: "var(--foreground)", color: "white" }}
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    Save
+                  </button>
+                </div>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: "var(--foreground-base)" }}>
                 {selectedEntry.message}
