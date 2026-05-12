@@ -104,10 +104,17 @@ export default function GalleryPage() {
     const subscription = getSupabase()
       .channel("guestbook_changes")
       .on(
-        "postgres_changes",
-        { event: "INSERT", schema: "public", table: "guestbook_entries" },
-        (payload: { new: GuestbookEntry }) => {
-          setEntries((prev) => [payload.new as GuestbookEntry, ...prev]);
+        "postgres_changes" as any,
+        { event: "*", schema: "public", table: "guestbook_entries" } as any,
+        (payload: any) => {
+          if (payload.eventType === "INSERT") {
+            setEntries((prev) => [payload.new as GuestbookEntry, ...prev]);
+          } else if (payload.eventType === "DELETE") {
+            setEntries((prev) => prev.filter((e) => e.id !== payload.old.id));
+            setSelectedEntry((current) =>
+              current && current.id === payload.old.id ? null : current
+            );
+          }
         }
       )
       .subscribe();
