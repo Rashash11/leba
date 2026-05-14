@@ -18,6 +18,7 @@ export default function GuestbookPage() {
   const [submitted, setSubmitted] = useState(false);
   const [alreadySubmitted, setAlreadySubmitted] = useState(false);
   const [cameraError, setCameraError] = useState<string | null>(null);
+  const [uploadError, setUploadError] = useState<string | null>(null);
   const [facingMode, setFacingMode] = useState<"user" | "environment">("user");
 
   useEffect(() => {
@@ -85,6 +86,27 @@ export default function GuestbookPage() {
     const dataUrl = canvas.toDataURL("image/jpeg", 0.9);
     setCapturedImage(dataUrl);
     stopCamera();
+  };
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUploadError(null);
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      setUploadError("Please select a valid image file.");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      if (typeof result === "string") {
+        setCapturedImage(result);
+        stopCamera();
+      }
+    };
+    reader.readAsDataURL(file);
   };
 
   const retakePhoto = () => {
@@ -279,6 +301,31 @@ export default function GuestbookPage() {
               </div>
             </div>
           )}
+
+          <div className="mt-4 text-center">
+            <label className="inline-flex flex-col items-center justify-center gap-3 w-full max-w-sm mx-auto px-5 py-4 rounded-[1.5rem] border-2 border-[var(--gold)] bg-[rgba(255,226,179,0.15)] text-base font-semibold text-[var(--foreground)] cursor-pointer shadow-lg shadow-black/10 hover:bg-[rgba(255,226,179,0.35)] transition">
+              <div className="inline-flex items-center gap-2">
+                <ImageIcon className="w-5 h-5" />
+                Upload a photo instead
+              </div>
+              <span className="text-sm text-[var(--foreground-base)]">
+                Choose an existing image from your device.
+              </span>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleFileUpload}
+                className="hidden"
+              />
+            </label>
+            <p className="text-sm mt-3 text-[var(--foreground-base)]">
+              You can upload an existing photo or take one with the camera.
+            </p>
+            {uploadError ? (
+              <p className="text-sm mt-2 text-red-200">{uploadError}</p>
+            ) : null}
+          </div>
+
           <canvas ref={canvasRef} className="hidden" />
         </div>
 

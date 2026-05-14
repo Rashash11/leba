@@ -9,7 +9,7 @@ import {
     OUR_STORY_PARAGRAPH_CLASS_NAME 
 } from "@/constants";
 import useCustomerDetails from "@/components/hooks/useCustomerDetails";
-import ourStoryImage from "@/public/our-story.png";
+import ourStoryImage from "@/public/our-story.jpeg";
 import ImageDisintegrationEffect from "@/components/elements/imageDisintegrationEffect";
 import TitleText from "@/components/elements/titleText";
 import Icon from "@/components/elements/icon";
